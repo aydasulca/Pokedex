@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Flexo';
+  src: url("../font/Flexo/Flexo-Regular.otf");
+}
+.style-title {
+  color: #eb6363;
+  font-family: 'Flexo';
+}
