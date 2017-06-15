@@ -11,6 +11,6 @@ const Header = (update) => {
   container.append(row);
   row.append(col);
   col.append(title);
-
+  
   return header;
 }
