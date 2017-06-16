@@ -1,8 +1,17 @@
 const SearchItem= (station,update) => {
-  const search =$('<div class="col m12">'+station.pokemon_species.name+'</div>');
-  const img    = $('<img src="http://serebii.net/art/th/'+station.entry_number+'.png">');
+  const search = $('<div class="col m3 flex-center cont-img"></div>');
+  const poke = $('<div class="cont-poke center"></div>')
+  const img    = $('<img class="style-img" src="http://serebii.net/art/th/'+station.entry_number+'.png">');
+  const divPoke = $('<div class="style-trapecio"></div>');
+  //const name = $('<p>'+station.pokemon_species.name+'</p>');
+  const trapecio = $('<img src="assets/img/trapecio.png" alt="">')
 
-  search.append(img);
+  search.append(poke);
+  poke.append(img);
+  search.append(divPoke);
+  divPoke.append(trapecio);
+
+  //poke.append(name);
   return search;
   };
 
@@ -15,6 +24,7 @@ const reRender = (containerpokemon, encontrandoPokemon) => {
 }
 
 const Search = (update) => {
+  const container = $('<div class="pokedex-container"></div>');
   const row = $('<div class="row"></div>');
   const form = $('<form class="col m12"></form>');
   const rowInput = $('<div class="row"></div>');
@@ -22,8 +32,9 @@ const Search = (update) => {
   const i = $('<i class="material-icons prefix">search</i>');
   const input = $('<input class="icon_telephone" type="tel" class="validate">');
   //const label = $('<label for="icon_telephone">Name</label>');
-  const containerpokemon = $('<div class="col m12 containerpokemon"></div>');
+  const containerpokemon = $('<div class=" col m12 "></div>');
 
+  container.append(row);
   row.append(form);
   row.append(containerpokemon);
   form.append(rowInput);
@@ -42,5 +53,5 @@ const Search = (update) => {
   });
   reRender(containerpokemon, filterByDistrict(state.stations.pokemon_entries, ""));
 
-  return row;
+  return container;
 }

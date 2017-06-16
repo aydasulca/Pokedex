@@ -1,7 +1,3 @@
-header{
-  margin-left: 100px;
-  margin-right: 100px;
-}
 @font-face {
   font-family: 'Flexo';
   src: url("../font/Flexo/Flexo-Regular.otf");
@@ -9,4 +5,37 @@ header{
 .style-title {
   color: #eb6363;
   font-family: 'Flexo';
+}
+.style-img{
+  padding-top: 20px;
+  height: 130px;
+}
+.cont-img{
+  background-color: #dbdbdb;
+}
+.pokedex-container{
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.center{
+  display: flex;
+  justify-content: center;
+}
+.row .col.m3 {
+  width: 18%;
+  height: 220px;
+  margin: 10px;
+}
+.cont-poke{
+  height: 130px;
+}
+.style-trapecio{
+  height: 40px;
 }
