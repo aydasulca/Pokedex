@@ -4,7 +4,7 @@ const SearchItem= (station,update) => {
   const img    = $('<img class="style-img" src="http://serebii.net/art/th/'+station.entry_number+'.png">');
   const divPoke = $('<div class="style-trapecio"></div>');
   const trapecio = $('<img class="trapecio" src="assets/img/trapecio.png" alt="">');
-  const divicon = $('<div class="center-column tras"></div>');
+  const divicon = $('<div class="space-between tras"></div>');
   const icon = $('<div class="center"></div>');
   const span1 = $('<img class="poke-icon" src="assets/icon/data.png" alt="">');
   const span2 = $('<img class="poke-icon" src="assets/icon/pokeball_gray.png" alt="">');
