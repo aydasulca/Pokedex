@@ -76,10 +76,11 @@ p{
 
 }
 .poke-icon{
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
   margin-left: 5px;
   margin-right: 5px;
+  cursor: pointer;
 }
 .az{
   background-color: #648e61;
@@ -88,6 +89,4 @@ p{
   color:  #fff;
   font-size: 20px;
   text-align: center;
-
-
 }
