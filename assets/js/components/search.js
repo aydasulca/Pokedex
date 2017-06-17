@@ -1,5 +1,5 @@
 const SearchItem= (station,update) => {
-  const search = $('<div class="col m3 space-between"></div>');
+  const search = $('<div class="col m3 space-between cd"></div>');
   const poke = $('<div class="container-img center"></div>')
   const img    = $('<img class="style-img" src="http://serebii.net/art/th/'+station.entry_number+'.png">');
   const divPoke = $('<div class="style-trapecio"></div>');
@@ -10,9 +10,12 @@ const SearchItem= (station,update) => {
   const span2 = $('<img class="poke-icon" src="assets/icon/pokeball_gray.png" alt="">');
   const span3 = $('<img class="poke-icon" src="assets/icon/valentines-heart.png" alt="">');
   const a = $('<a class="modal-trigger" href="#modal1"></a>');
-  const name = $('<p>'+station.pokemon_species.name+'</p>');
-  const containerD = $('<div class= "col m12"></div>');
-//  const url = $('<p>'+$.get(station.pokemon_species.url, (n) => { return console.log(n.capture_rate)})+'</p>');
+  const name = $('<p class="style-name">'+station.pokemon_species.name+'</p>');
+//  const containerD = $('<div class= "col m12 adios"></div>');
+//const url = $('<p>'+$.get(station.pokemon_species.url, (n) => { return console.log(n.capture_rate)})+'</p>');
+const spanUrl = $('<span>' + $.get(station.pokemon_species.url,(rs)=>{ return console.log(rs);}) + '</span>');
+
+  search.append(spanUrl);
 
   search.append(poke);
   poke.append(img);
@@ -28,6 +31,12 @@ const SearchItem= (station,update) => {
 
   a.on('click',() => {
     $('.modal').modal();
+    const clonado = search.clone();
+
+    $('#modal1').append(pokDetalle2(clonado));
+    //$( ".cd" ).clone().appendTo( ".modal" );
+
+  //  const name = $('<p class="style-name">'+station.pokemon_species.name+'</p>');
 
   });
 
