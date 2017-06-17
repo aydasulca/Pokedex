@@ -10,35 +10,25 @@ const SearchItem= (station,update) => {
   const span2 = $('<img class="poke-icon" src="assets/icon/pokeball_gray.png" alt="">');
   const span3 = $('<img class="poke-icon" src="assets/icon/valentines-heart.png" alt="">');
   const a = $('<a class="modal-trigger" href="#modal1"></a>');
-  const modal = $('<div id="modal1" class="modal modal-fixed-footer cd"></div>');
   const name = $('<p>'+station.pokemon_species.name+'</p>');
   const containerD = $('<div class= "col m12"></div>');
 //  const url = $('<p>'+$.get(station.pokemon_species.url, (n) => { return console.log(n.capture_rate)})+'</p>');
 
   search.append(poke);
-  //search.append(containerD);
   poke.append(img);
   search.append(divPoke);
   divPoke.append(trapecio);
   divPoke.append(divicon);
   divicon.append(icon);
   icon.append(a);
-  icon.append(modal);
   a.append(span2);
   icon.append(span3);
   icon.append(span1);
   divicon.append(name);
-  //divicon.append(url);
 
-  //poke.append(name);
   a.on('click',() => {
     $('.modal').modal();
-    //alert("hola");
-    /*
-    $.get(station.pokemon_species.url,(n) => {
-      $('.cd').html($('.cd').append(search));
-    })
-    */
+
   });
 
 
@@ -62,7 +52,7 @@ const Search = (update) => {
   const rowInput = $('<div class="row"></div>');
   const divInput = $('<div class="input-field col m6"></div>');
   const i = $('<i class="material-icons prefix">search</i>');
-  const input = $('<input class="icon_telephone" type="tel" class="validate">');
+  const input = $('<input class="" type="tel" class="validate">');
   //const label = $('<label for="icon_telephone">Name</label>');
   const col4 = $('<div class = "col m5 text-AZ-style"></div>')
   const az = $('<div class = "az col m2 "> A-Z </div>')
