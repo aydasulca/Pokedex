@@ -1,5 +1,5 @@
 const SearchItem= (station,update) => {
-  const search = $('<div class="col m3 space-between cd"></div>');
+  const search = $('<div class="col m3 space-between"></div>');
   const poke = $('<div class="container-img center"></div>')
   const img    = $('<img class="style-img" src="http://serebii.net/art/th/'+station.entry_number+'.png">');
   const divPoke = $('<div class="style-trapecio"></div>');
@@ -13,9 +13,9 @@ const SearchItem= (station,update) => {
   const name = $('<p class="style-name">'+station.pokemon_species.name+'</p>');
 //  const containerD = $('<div class= "col m12 adios"></div>');
 //const url = $('<p>'+$.get(station.pokemon_species.url, (n) => { return console.log(n.capture_rate)})+'</p>');
-const spanUrl = $('<span>' + $.get(station.pokemon_species.url,(rs)=>{ return console.log(rs);}) + '</span>');
+//const spanUrl = $('<span>' + $.get(station.pokemon_species.url,(rs)=>{ return console.log(rs);}) + '</span>');
 
-  search.append(spanUrl);
+//  search.append(spanUrl);
 
   search.append(poke);
   poke.append(img);
@@ -31,11 +31,11 @@ const spanUrl = $('<span>' + $.get(station.pokemon_species.url,(rs)=>{ return co
 
   a.on('click',() => {
     $('.modal').modal();
-    const clonado = search.clone();
+  const clonado = search.clone();
+  $(clonado).appendTo( ".modal" );
 
-    $('#modal1').append(pokDetalle2(clonado));
-    //$( ".cd" ).clone().appendTo( ".modal" );
-
+  //$('.modal').append(PokemonDetails(clonado));
+//$(clonado).append(PokemonDetails());
   //  const name = $('<p class="style-name">'+station.pokemon_species.name+'</p>');
 
   });
