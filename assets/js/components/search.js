@@ -31,8 +31,12 @@ const SearchItem= (station,update) => {
 
   a.on('click',() => {
     $('.modal').modal();
+
   const clonado = search.clone();
-  $(clonado).appendTo( ".modal" );
+//  modal.empty();
+$(".poke-content").empty();
+  $(clonado).appendTo(".poke-content");
+
 
   //$('.modal').append(PokemonDetails(clonado));
 //$(clonado).append(PokemonDetails());
