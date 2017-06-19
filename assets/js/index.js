@@ -5,7 +5,7 @@ const render = (root) => {
   const wrapper = $('<div class="wrapper"></div>');
   wrapper.append(Header(_ => render(root)));
   wrapper.append(Search(_ => render(root)));
-  wrapper.append(PokemonDetails());
+  wrapper.append(PokemonDetails(_ => render(root)));
 
 root.append(wrapper);
 
@@ -14,7 +14,6 @@ root.append(wrapper);
 const state = {
   stations: null,
   selectedStation: null,
-  //dato: null,
 };
 
 $( _ =>{
@@ -24,9 +23,7 @@ $( _ =>{
     if (err) { return alert(err.message);}
 
     state.stations = json;
-    //state.dato= json;
 
-    //console.log(state.stations);
 
   const root = $(".root");
   render(root);
@@ -34,8 +31,3 @@ $( _ =>{
 
 
 });
-
-//modal-materialize
-
-
-   

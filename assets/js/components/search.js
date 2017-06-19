@@ -1,5 +1,5 @@
 const SearchItem= (station,update) => {
-  const search = $('<div class="col m3 space-between"></div>');
+  const search = $('<div class="col m3 space-between" id="hola"></div>');
   const poke = $('<div class="container-img center"></div>')
   const img    = $('<img class="style-img" src="http://serebii.net/art/th/'+station.entry_number+'.png">');
   const divPoke = $('<div class="style-trapecio"></div>');
@@ -11,11 +11,8 @@ const SearchItem= (station,update) => {
   const span3 = $('<img class="poke-icon" src="assets/icon/valentines-heart.png" alt="">');
   const a = $('<a class="modal-trigger" href="#modal1"></a>');
   const name = $('<p class="style-name">'+station.pokemon_species.name+'</p>');
-//  const containerD = $('<div class= "col m12 adios"></div>');
-//const url = $('<p>'+$.get(station.pokemon_species.url, (n) => { return console.log(n.capture_rate)})+'</p>');
-//const spanUrl = $('<span>' + $.get(station.pokemon_species.url,(rs)=>{ return console.log(rs);}) + '</span>');
 
-//  search.append(spanUrl);
+
 
   search.append(poke);
   poke.append(img);
@@ -31,29 +28,29 @@ const SearchItem= (station,update) => {
 
   a.on('click',() => {
     $('.modal').modal();
+    const cloneImg = poke.clone();
+    const cloneIcon = divPoke.clone();
+    $(".poke-content").empty();
+    $(cloneImg).appendTo(".poke-content");
+    $(cloneIcon).appendTo(".poke-content");
+    const cloneName = name.clone();
+    $(".pokeName").empty();
+    $(cloneName).appendTo(".pokeName");
 
-  const clonado = search.clone();
-//  modal.empty();
-$(".poke-content").empty();
-  $(clonado).appendTo(".poke-content");
+    $.get(station.pokemon_species.url,(data) => {
+      //console.log(data);
+       let valor = data.flavor_text_entries[3].flavor_text;
+       $('.pokeInfo').html(valor);
 
-
-  //$('.modal').append(PokemonDetails(clonado));
-//$(clonado).append(PokemonDetails());
-  //  const name = $('<p class="style-name">'+station.pokemon_species.name+'</p>');
+      })
 
   });
-
-
   return search;
-
 };
-
 
 const reRender = (containerpokemon, encontrandoPokemon) => {
   containerpokemon.empty();
   encontrandoPokemon.forEach(n => {
-    //console.log(n);
     containerpokemon.append(SearchItem(n,_ =>{reRender(containerpokemon, encontrandoPokemon)}));
   });
 }
@@ -66,7 +63,6 @@ const Search = (update) => {
   const divInput = $('<div class="input-field col m6"></div>');
   const i = $('<i class="material-icons prefix">search</i>');
   const input = $('<input class="" type="tel" class="validate">');
-  //const label = $('<label for="icon_telephone">Name</label>');
   const col4 = $('<div class = "col m5 text-AZ-style"></div>')
   const az = $('<div class = "az col m2 "> A-Z </div>')
   const containerpokemon = $('<div class=" col m12 "></div>');
@@ -80,12 +76,10 @@ const Search = (update) => {
   col4.append(az);
   divInput.append(i);
   divInput.append(input);
-//  divInput.append(label);
 
   input.on('keyup', (e) => {
     if(input.val() != "") {
       var encontrandoPokemon= filterByDistrict(state.stations.pokemon_entries, input.val());
-    //  console.log(encontrandoPokemon);
       reRender(containerpokemon, encontrandoPokemon);
     }
 

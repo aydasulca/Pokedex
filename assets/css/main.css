@@ -19,17 +19,20 @@
   flex-direction: column;
   align-items: flex-start;
 }
-.row .col.m3 {
-  width: 13%;
-  height: 210px;
-  margin: 40px;
-  background-color: #EFEFEF;
-}
+
+  .row .col.m3 {
+    width: 13%;
+    height: 210px;
+    margin: 40px;
+    background-color: #EFEFEF;
+  }
+
 .container-img{
   height: 65%;
 }
 .style-img{
-  padding-top: 10%;
+  /*padding-top: 20%;*/
+  margin-top: 10%;
   height: 95%;
 }
 .space-between{
@@ -42,6 +45,7 @@
   display: flex;
   justify-content: center;
 }
+
 .center-column{
   display: flex;
   justify-content: center;
@@ -80,4 +84,13 @@
   color:  #fff;
   font-size: 20px;
   text-align: center;
+}
+div .poke-content{
+  background-color: #dbdbdb;
+  margin-top: 100px;
+  color: white;
+  height: 450px;
+}
+.modal {
+  background-color: #edecec;
 }
