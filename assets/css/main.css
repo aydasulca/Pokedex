@@ -89,7 +89,8 @@ div .poke-content{
   background-color: #dbdbdb;
   margin-top: 100px;
   color: white;
-  height: 450px;
+  max-height: 450px;
+  height: 100%;
 }
 .modal {
   background-color: #edecec;

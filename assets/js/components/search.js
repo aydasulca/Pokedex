@@ -1,7 +1,7 @@
 const SearchItem= (station,update) => {
   const search = $('<div class="col m3 space-between" id="hola"></div>');
   const poke = $('<div class="container-img center"></div>')
-  const img    = $('<img class="style-img" src="http://serebii.net/art/th/'+station.entry_number+'.png">');
+  const img    = $('<img class="style-img" src="https://serebii.net/art/th/'+station.entry_number+'.png">');
   const divPoke = $('<div class="style-trapecio"></div>');
   const trapecio = $('<img class="trapecio" src="assets/img/trapecio.png" alt="">');
   const divicon = $('<div class="space-between tras"></div>');
@@ -38,7 +38,6 @@ const SearchItem= (station,update) => {
     $(cloneName).appendTo(".pokeName");
 
     $.get(station.pokemon_species.url,(data) => {
-      //console.log(data);
        let valor = data.flavor_text_entries[3].flavor_text;
        $('.pokeInfo').html(valor);
 

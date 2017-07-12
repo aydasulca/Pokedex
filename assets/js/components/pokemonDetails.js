@@ -10,7 +10,7 @@ const PokemonDetails =(station) => {
   const pokeName = $('<div class="col m12 pokeName"></div>');
   const information = $('<div class="col m12 pokeInfo"><p></p></div>');
   const description = $('<div class="col m12 "></div>');
-  const x = $('<a href="#!" class="col m1 modal-action modal-close "><img class="poke-icon" src="assets/icon/cross-out.png" alt=""></a>');
+  const x = $('<a href="#!" class="col m1 modal-action modal-close"><img class="poke-icon" src="assets/icon/cross-out.png" alt=""></a>');
 
 
   rowModal.append(modal);
@@ -24,6 +24,10 @@ const PokemonDetails =(station) => {
   content.append(x);
 
 
-
+   $.get("https://pokeapi.co/api/v2/", (response) => {
+     console.log(response);
+   })
   return rowModal;
+
+
 }
